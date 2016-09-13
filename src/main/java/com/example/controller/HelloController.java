@@ -48,7 +48,7 @@ public class HelloController {
 		return "redirect:/login?logout";
 	}
 	
-	@RequestMapping(value = "/deny", method = RequestMethod.GET)
+	@RequestMapping(value = "/denyaccess", method = RequestMethod.GET)
     public String accessDeniedPage(ModelMap model) {
         model.addAttribute("user", getPrincipal());
         return "security/access_deny";

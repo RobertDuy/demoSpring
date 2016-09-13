@@ -19,9 +19,9 @@ public class MySuccessHandler implements AuthenticationSuccessHandler {
 			throws IOException, ServletException {
 		Set<String> roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());
 		if (roles.contains("ROLE_ADMIN")) {
-			response.sendRedirect("/admin/embassy");
+			response.sendRedirect(request.getContextPath() + "/admin");
 			return;
 		}
-		response.sendRedirect("/user/embassy");
+		response.sendRedirect(request.getContextPath() + "/denyaccess");
 	}
 }

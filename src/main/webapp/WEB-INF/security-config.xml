@@ -12,7 +12,8 @@
 		    login-page="/login"
 			username-parameter="username"
 			password-parameter="password"
-			authentication-failure-url="/deny"/>
+			authentication-failure-url="/login?error"
+			authentication-success-handler-ref="authenticationSuccessHandler"/>
 		<logout logout-success-url="/login?logout" />
 		<csrf/>
 	</http>
@@ -26,5 +27,5 @@
 	  </authentication-provider>
 	</authentication-manager>
 
-	<!-- <b:bean id="mySuccessHandler" class="com.example.handler.MySuccessHandler" /> -->
+	<b:bean id="authenticationSuccessHandler" class="com.example.handler.MySuccessHandler" />
 </b:beans>
